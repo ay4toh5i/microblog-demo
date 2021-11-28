@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS `tweets`(
+  `id` char(26) PRIMARY KEY,
+  `user_id` bigint(20) NOT NULL,
+  `message` varchar(255) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
