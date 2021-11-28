@@ -28,5 +28,16 @@ services:
       DB_DATABASE: microblog
     depends_on:
       - db
+  web:
+    image: node:17-alpine
+    volumes:
+      - ./frontend:/frontend
+    working_dir: /frontend
+    command: sh -c "yarn install && yarn dev"
+    tty: true
+    ports:
+      - 3000:3000
+    depends_on:
+      - api
 volumes:
   db:
