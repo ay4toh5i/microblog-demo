@@ -7,8 +7,15 @@
     "serve": "vite preview"
   },
   "dependencies": {
+    "@types/styled-components": "^5.1.15",
+    "axios": "^0.24.0",
+    "axios-case-converter": "^0.9.0",
+    "modern-css-reset": "^1.4.0",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
+    "react-hook-form": "^7.20.4",
+    "react-query": "^3.33.7",
+    "styled-components": "^5.3.3",
     "vite-plugin-svgr": "^0.6.0",
     "vite-tsconfig-paths": "^3.3.17"
   },
