@@ -3,27 +3,38 @@ package main
 import (
 	"fmt"
 	"log"
-	"net/http"
-	"time"
+	"microblog/app/web"
+	"microblog/config"
+	"microblog/db/mysql"
 
-	"github.com/gorilla/mux"
+	_ "github.com/go-sql-driver/mysql"
+	"github.com/jmoiron/sqlx"
 )
 
-func HelloHandler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "hello world")
-}
-
 func main() {
-	r := mux.NewRouter()
+	log.Println("server start")
 
-	r.HandleFunc("/", HelloHandler)
-
-	srv := &http.Server{
-		Handler:      r,
-		Addr:         ":80",
-		WriteTimeout: 15 * time.Second,
-		ReadTimeout:  15 * time.Second,
+	cfg, err := config.Init()
+	if err != nil {
+		log.Fatal(err)
 	}
 
-	log.Fatal(srv.ListenAndServe())
+	db, err := sqlx.Connect(
+		"mysql",
+		fmt.Sprintf(
+			"%s:%s@tcp(%s:%d)/%s?parseTime=true",
+			cfg.DbUsername,
+			cfg.DbPassword,
+			cfg.DbHost,
+			cfg.DbPort,
+			cfg.DbDatabase,
+		),
+	)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	mysql.Migrate(cfg)
+
+	web.RunServer(db)(cfg.HttpPort)
 }
