@@ -13,6 +13,7 @@ services:
     build:
       context: ./backend
       target: dev
+    command: sh -c "dockerize --wait tcp://db:3306 -timeout 30s && go run ./cmd/api/main.go"
     tty: true
     ports:
       - 8000:80
