@@ -11,6 +11,7 @@ require (
 	github.com/gorilla/sessions v1.2.1
 	github.com/jmoiron/sqlx v1.3.4
 	github.com/oklog/ulid/v2 v2.0.2
+	github.com/rs/cors v1.8.0
 	golang.org/x/crypto v0.0.0-20211117183948-ae814b36b871
 )
 

@@ -21,6 +21,7 @@ services:
       - ./backend:/go/src
     environment:
       HTTP_PORT: 80
+      FRONTEND_ORIGIN: http://localhost:3000
       DB_HOST: db
       DB_PORT: 3306
       DB_USERNAME: root
