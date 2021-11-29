@@ -1,0 +1,366 @@
+{
+	"info": {
+		"_postman_id": "90e00231-2240-4401-b32d-4fd94818a4dd",
+		"name": "microblog",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get User List",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get User List",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 29 Nov 2021 01:06:49 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1168"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"users\": [\n        {\n            \"id\": 1,\n            \"username\": \"tanaka\",\n            \"display_name\": \"Tanaka\",\n            \"description\": \"hoge\",\n            \"following\": true,\n            \"followed_by\": false\n        },\n        {\n            \"id\": 2,\n            \"username\": \"yamada\",\n            \"display_name\": \"山田\",\n            \"description\": \"山田です。アウトドアが趣味です。\",\n            \"following\": true,\n            \"followed_by\": true\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Tweet List",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/tweets",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"tweets"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Tweet List",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/tweets",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"tweets"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 29 Nov 2021 01:08:44 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "892"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"tweets\": [\n        {\n            \"id\": \"01FNMHWCF3WNDPTBG00G6TYD53\",\n            \"user\": {\n                \"id\": 2,\n                \"username\": \"yamada\",\n                \"display_name\": \"山田\",\n                \"description\": \"山田です。アウトドアが趣味です。\"\n            },\n            \"message\": \"test message\",\n            \"created_at\": \"2021-11-29T00:35:26Z\",\n            \"updated_at\": \"2021-11-29T00:35:26Z\"\n        },\n        {\n            \"id\": \"01FNJP7MNGSD94YKM8XJJK4FP7\",\n            \"user\": {\n                \"id\": 1,\n                \"username\": \"tanaka\",\n                \"display_name\": \"Tanaka\",\n                \"description\": \"hoge\"\n            },\n            \"message\": \"new tweet\",\n            \"created_at\": \"2021-11-28T07:13:00Z\",\n            \"updated_at\": \"2021-11-28T07:13:00Z\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Register User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"yamada\",\n    \"password\": \"password\",\n    \"display_name\": \"Yamada\",\n    \"description\": \"山田です。\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Register User",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"yamada\",\n    \"password\": \"password\",\n    \"display_name\": \"Yamada\",\n    \"description\": \"山田です。\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Set-Cookie",
+							"value": "session-id=MTYzODE0ODM3NHxEdi1CQkFFQ180SUFBUkFCRUFBQUlQLUNBQUVHYzNSeWFXNW5EQWtBQjNWelpYSmZhV1FGYVc1ME5qUUVBZ0FXfN1CCvJWMkW-Y-2PCUS7fm_vwSZC2VoLzIkxV2h2lTK3; Path=/; Expires=Wed, 29 Dec 2021 01:12:54 GMT; Max-Age=2592000"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 29 Nov 2021 01:12:54 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Follow User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_id\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/followings",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"followings"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Follow User",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/followings",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"followings"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 29 Nov 2021 01:13:41 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"yamada\",\n    \"password\": \"password\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8000/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"yamada\",\n    \"password\": \"password\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Set-Cookie",
+							"value": "session-id=MTYzODE0Nzk3N3xEdi1CQkFFQ180SUFBUkFCRUFBQUlQLUNBQUVHYzNSeWFXNW5EQWtBQjNWelpYSmZhV1FGYVc1ME5qUUVBZ0FVfPdRCc_rgjV6kTw3AnZ8CQb-ZbSJIWXk9iBCjpTqCstj; Path=/; Expires=Wed, 29 Dec 2021 01:06:17 GMT; Max-Age=2592000"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 29 Nov 2021 01:06:17 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		}
+	]
+}
